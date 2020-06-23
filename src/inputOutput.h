@@ -10,18 +10,22 @@ namespace CS417_SP
 	{
 	public:
 		/**
-		 * @brief 
+		 * @brief Function reads a given input file and parses its content:
 		 * 
-		 * @param infile 
-		 * @param matrix 
+		 * 1. Sanitizes data by calling removeCharsNotInLanguage()
+		 * 2. Logs all tempertaure data for each core at each interval
+		 * 3. Sets the number of cores and intervals on the CPU object for later calcualtions
+		 * 
+		 * @param infile: in-file name
+		 * @param matrix: CPU object
 		 */
 		void readFile(const char* infile, CPU &matrix);
 
 		/**
-		 * @brief 
+		 * @brief Creates an output txt file for computed data
 		 * 
-		 * @param data 
-		 * @param file 
+		 * @param data: Computed CPU object data 
+		 * @param file: out-file index indicating the arg source data
 		 */
 		void writeCPUData(CPU &data, int file);
 
@@ -29,11 +33,10 @@ namespace CS417_SP
 		const std::string alphabet = "0123456789. ";
 
 		/**
-		 * @brief Sanitizes an input string removing all characters not in private: const alphabet
+		 * @brief Sanitizes an input string removing all characters not in language
 		 * 
-		 * @param str 
-		 * @param language raw string input
-		 * @return language  sanitized string 
+		 * @param str: String to be sanitized
+		 * @param language: acceptable chars in language
 		 */
 		std::string& removeCharsNotInLanguage(std::string& str, const std::string& language);
 	};

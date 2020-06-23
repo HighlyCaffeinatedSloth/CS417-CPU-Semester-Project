@@ -24,14 +24,14 @@ namespace CS417_SP
 		/**
 		 * @brief Get the Num Intervals object
 		 * 
-		 * @return int 
+		 * @return int: number of intervals 
 		 */
 		inline int getNumIntervals() { return intervals; }
 
 		/**
 		 * @brief Get the Interval Time object
 		 * 
-		 * @return int 
+		 * @return int: time (in seconds) represented by each interval.
 		 */
 		inline int getIntervalTime() { return intervalTime; }
 
@@ -45,7 +45,7 @@ namespace CS417_SP
 		/**
 		 * @brief Get the Num Cores object
 		 * 
-		 * @return int 
+		 * @return int: Number of cores (represented by columns) supplied in the input data file 
 		 */
 		inline int getNumCores() { return cores; }
 
@@ -59,7 +59,7 @@ namespace CS417_SP
 		inline double getLinerInterpDataAt(int row, int col) { return m_linearInterpData[row][col]; }
 
 		/**
-		 * @brief 
+		 * @brief Returns the computed linear least square data at a given time interval and core
 		 * 
 		 * @param row 
 		 * @param col 
@@ -112,7 +112,7 @@ namespace CS417_SP
 		/**
 		 * @brief 
 		 * 
-		 * @param temps 
+		 * @param temps: 
 		 */
 		void logTemperatureReading(std::vector<double> temps);
 	};
