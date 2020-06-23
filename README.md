@@ -1,5 +1,5 @@
 
-#CS417 Semester Project
+# CS417 Semester Project
 
 The purpose of this project is to analyze raw CPU temperature data parsed from a log file and calculate the peicewise linear interpolation and global linear least squares formula of the trend.
 
@@ -11,21 +11,21 @@ The purpose of this project is to analyze raw CPU temperature data parsed from a
 
 ## Prerequisites
 The items below are required to compile and run the software.
-###C++17 (g++ preferred)
+### C++17 (g++ preferred)
 A C++17 complier is required. Both g++ and Clang++ are tested to work however, the makefile utilizes g++-8.
 
 `$ apt-get install g++-8`
 
-###Eigen 3.3.7
+### Eigen 3.3.7
 The Eigen library for c++ is used for precision matrix and vector mathematics. More information on the library can be found [here](http://eigen.tuxfamily.org/index.php?title=Main_Page "here")
 
 The necessary libraries are included in this tar file
 
-###Cmake
+### Cmake
 
 `$ apt-get install cmake`
 
-##Buliding
+## Buliding
 The included makefile assumes:
 - g++-8 or higher is used.
 
@@ -39,7 +39,7 @@ With this in mind the program can be compiled by invoking:
 
 `$ make -f makefile`
 
-##Running the project
+## Running the project
 The program runs from the command line. It accepts arguments pointing to the text files containing the temperature data.
 
 `./CS417SP file1.txt`
@@ -52,7 +52,7 @@ Basic validation is done to ensure the given input file actually exist.
 
 It is assumed if the file exists it is formatted correctly
 
-###Input
+### Input
 
 The program assumes the input data takes the form of temperatures in a txt file as folows:
 
@@ -64,7 +64,7 @@ The program assumes the input data takes the form of temperatures in a txt file 
 
 Characters not in the language {0-9;. } are removed as the file is parsed.
 
-###Output
+### Output
 
 The software creates one output file per core per dataset that follow the following nomenclature:
 
@@ -79,7 +79,7 @@ Where:
 - yk is the kth function
 - type is either least-squares or interpolation
 
-##Authors
+## Authors
 - Cody Nicolaou - June 22 2020
 
 ## Acknowlegements
