@@ -7,7 +7,7 @@
 # define the C/C++ compiler to use
 CC = g++-8
 
-# define compile-time flags NOTE: last two flags required for C++ 11 spec on osx
+# define compile-time flags
 CFLAGS = -g -Wall -std=c++17
 
 # define any directories containing header files other than /usr/include
@@ -37,7 +37,7 @@ SRCS := $(shell find $(SRC_DIRS) -name *.cpp)
 #
 OBJS = $(SRCS:.c=.o)
 
-# define the executable file  name
+# define the executable file name
 MAIN = ./build/CS417SP
 
 #
