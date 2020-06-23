@@ -11,24 +11,29 @@ The purpose of this project is to analyze raw CPU temperature data parsed from a
 
 ## Prerequisites
 The items below are required to compile and run the software.
-###C++17
-A c++17 complier is required. Both g++ and Clang++ are tested to work.
-###Eigen 3
-The Eigen library for c++ is used for precision matrix and vector mathematics. It can be found [here](http://eigen.tuxfamily.org/index.php?title=Main_Page "here") or alternatively installed using:
+###C++17 (g++ preferred)
+A C++17 complier is required. Both g++ and Clang++ are tested to work however, the makefile utilizes g++-8.
 
+`$ apt-get install g++-8`
 
-`$ apt-get install libeigen3-dev`
+###Eigen 3.3.7
+The Eigen library for c++ is used for precision matrix and vector mathematics. More information on the library can be found [here](http://eigen.tuxfamily.org/index.php?title=Main_Page "here")
 
+The necessary libraries are included in this tar file
+
+###Cmake
+
+`$ apt-get install cmake`
 
 ##Buliding
-The included makefile assumes many things, specifically:
-- Clang++ version 4 or lower is used.
+The included makefile assumes:
+- g++-8 or higher is used.
 
-	The CFLAG `-std=c++1z` and LDLIB `-lstdc++fs` are set because the program utilizes the C++17 experimental filesystem that was not finalized for Clang 4 and lower.
+	Although filesystem is no longer experimental in GCC 8 it still needs `LFLAGS = -lstdc++fs` set to build correctly.
 
 - You are compiling this on a *nix system
 
-	The makefile uses `-I/usr/include/eigen3/Eigen` to find the required librarys not included.
+	The makefile targets the included lib folder containing the necessary Eigen dependancies.
 
 With this in mind the program can be compiled by invoking:
 
@@ -43,7 +48,10 @@ It can also accept multiple files at once:
 
 `./CS417SP file1.txt file2.txt`
 
-Basic file validation is done to ensure the given input actually exist.
+Basic validation is done to ensure the given input file actually exist.
+
+It is assumed if the file exists it is formatted correctly
+
 ###Input
 
 The program assumes the input data takes the form of temperatures in a txt file as folows:
@@ -60,7 +68,7 @@ Characters not in the language {0-9;. } are removed as the file is parsed.
 
 The software creates one output file per core per dataset that follow the following nomenclature:
 
-TemperatureData{file number}_Core{core number}
+{epoch_time}-Temperature-Data-{file number}-Core-{core number}
 
 The output is formatted as follows
 
@@ -72,7 +80,7 @@ Where:
 - type is either least-squares or interpolation
 
 ##Authors
-- Cody Nicolaou - April 2019
+- Cody Nicolaou - June 22 2020
 
 ## Acknowlegements
 - The [Eigen Project](http://eigen.tuxfamily.org/index.php?title=Main_Page "Eigen Project")
