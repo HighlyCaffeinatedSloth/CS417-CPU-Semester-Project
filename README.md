@@ -5,8 +5,6 @@ The purpose of this project is to analyze raw CPU temperature data parsed from a
 
 **Table of Contents**
 
-[TOCM]
-
 [TOC]
 
 ## Prerequisites
@@ -19,7 +17,7 @@ A C++17 complier is required. Both g++ and Clang++ are tested to work however, t
 ### Eigen 3.3.7
 The Eigen library for c++ is used for precision matrix and vector mathematics. More information on the library can be found [here](http://eigen.tuxfamily.org/index.php?title=Main_Page "here")
 
-The necessary libraries are included in this tar file
+The necessary Eigen libraries are included in this repository.
 
 ### Cmake
 
