@@ -8,30 +8,30 @@ The purpose of this project is to analyze raw CPU temperature data parsed from a
 [TOC]
 
 ## Prerequisites
-The items below are required to compile and run the software.
-### C++17 (g++ preferred)
-A C++17 complier is required. Both g++ and Clang++ are tested to work however, the makefile utilizes g++-8.
+The items below are required to compile the project.
+
+### C++17 Compiler (g++ preferred)
+Both g++ and Clang++ are tested to work however, the included makefile exclusively targets g++-8 which has been more thoroughly tested.
 
 `$ apt-get install g++-8`
 
-### Eigen 3.3.7
-The Eigen library for c++ is used for precision matrix and vector mathematics. More information on the library can be found [here](http://eigen.tuxfamily.org/index.php?title=Main_Page "here")
-
-The necessary Eigen libraries are included in this repository.
-
-### Cmake
+### Cmake 
 
 `$ apt-get install cmake`
 
+## Libraries included
+
+### Eigen 3.3.7
+The Eigen library for C++ is used for precision matrix and vector mathematics. More information on the library can be found [here](http://eigen.tuxfamily.org/index.php?title=Main_Page "here")
+
+The necessary Eigen dependencies are included in this repository in ./libs.
+
 ## Buliding
 The included makefile assumes:
-- g++-8 or higher is used.
-
+- g++-8 is available.
 	Although filesystem is no longer experimental in GCC 8 it still needs `LFLAGS = -lstdc++fs` set to build correctly.
 
-- You are compiling this on a *nix system
-
-	The makefile targets the included lib folder containing the necessary Eigen dependancies.
+The makefile targets the included lib folder containing the necessary Eigen dependancies.
 
 With this in mind the program can be compiled by invoking:
 
@@ -46,9 +46,7 @@ It can also accept multiple files at once:
 
 `./CS417SP file1.txt file2.txt`
 
-Basic validation is done to ensure the given input file actually exist.
-
-It is assumed if the file exists it is formatted correctly
+Basic validation is done to ensure the given input file(s) exist and it is assumed if the file(s) exist they are formatted correctly.
 
 ### Input
 
@@ -78,7 +76,7 @@ Where:
 - type is either least-squares or interpolation
 
 ## Authors
-- Cody Nicolaou - June 22 2020
+- Cody N - June 22 2020
 
 ## Acknowlegements
 - The [Eigen Project](http://eigen.tuxfamily.org/index.php?title=Main_Page "Eigen Project")
