@@ -76,7 +76,7 @@ Where:
 - type is either least-squares or interpolation
 
 ## Authors
-- Cody N - June 22 2020
+- Cody N
 
 ## Acknowlegements
 - The [Eigen Project](http://eigen.tuxfamily.org/index.php?title=Main_Page "Eigen Project")
