@@ -13,11 +13,11 @@ The items below are required to compile the project.
 ### C++17 Compiler (g++ preferred)
 Both g++ and Clang++ are tested to work however, the included makefile exclusively targets g++-8 which has been more thoroughly tested.
 
-`$ apt-get install g++-8`
+`apt-get install g++-8`
 
 ### Cmake 
 
-`$ apt-get install cmake`
+`apt-get install cmake`
 
 ## Libraries included
 
@@ -35,7 +35,7 @@ The makefile targets the included lib folder containing the necessary Eigen depe
 
 With this in mind the program can be compiled by invoking:
 
-`$ make -f makefile`
+`make -f makefile`
 
 ## Running the project
 The program runs from the command line. It accepts arguments pointing to the text files containing the temperature data.
